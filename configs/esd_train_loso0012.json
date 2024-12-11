@@ -14,8 +14,8 @@
         "sample_rate": 16000,
         "frame_size": 64,
         "hop_size": 32,
-        "training_files": "filelists/esd/loso/esd_audio_sid_text_train_filelist.txt",
-        "val_files": "filelists/esd/loso/esd_audio_sid_text_val_filelist.txt",
+        "training_files": "filelists/esd/loso0012/esd_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/esd/loso0012/esd_audio_sid_text_val_filelist.txt",
         "test_files": 0
     },
     "model": {

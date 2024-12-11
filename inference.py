@@ -1,11 +1,11 @@
 import torch
 from torch import nn
 import argparse
-from utils import segment_level_feature_extractor_from_file
+from preprocess import extract_resized_segments_from_file
+import torchvision.transforms as T
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("extractor_path")
     parser.add_argument("model_path")
     args = parser.parse_args()
 
@@ -13,12 +13,8 @@ def main():
     print('Using {} device'.format(device))
     torch.set_default_device(device)
 
-    # 特徴抽出器をロードする
-    extractor = segment_level_feature_extractor_from_file(num_classes=4, extractor_path=args.extractor_path, device=device)
-    print(f'load extractor: {args.extractor_path}')
-    
     # モデルのロード
-    model = torch.load(args.model_path)
+    model = torch.load(args.model_path, device)
     print(f'load model: {args.model_path}')
 
     # 確認(summaryはRNNだと使用不可)
@@ -29,21 +25,29 @@ def main():
     # print(f'{list(model.parameters())[0]=}')
 
     id2emo = {0:'Neutral', 1:'Happy', 2:'Sad', 3:'Angry'}
+    if 'esd' in args.model_path:
+        max_sec = 3.0
+    elif 'jtes' in args.model_path:
+        max_sec = 4.0
+    else:
+        max_sec = 3.0
 
     while True:
         wavpath = input("input wavpath or 'q' to quit> ")
         if wavpath == 'q':
             break
-        pred, label = inference(wavpath, extractor, model)
+        pred, label = inference(wavpath, model, device, max_sec)
         print(f'prediction:\n {pred}')
         print(f'label(pred): {id2emo[label]}')
 
 
-def inference(wavpath, extractor, model):
-    feature = extractor(wavpath)
+def inference(wavpath, model, device, max_sec):
+    X = extract_resized_segments_from_file(wavpath, device=device, max_sec=max_sec, 
+                                           normalizer=T.Normalize(mean = (0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)))
+    # X.unsqueeze(0).size() -> [batch_size(1), seq_len, C, H, W]
     with torch.no_grad():
-        pred = model(feature)
-    prob = nn.Softmax(dim=1)(pred)
+        pred = model(X.unsqueeze(0))
+        prob = nn.Softmax(dim=1)(pred)
     return prob, int(prob.argmax(1))
 
 if __name__ == "__main__":

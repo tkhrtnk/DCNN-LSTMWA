@@ -6,8 +6,9 @@ import argparse
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('name')
+    parser.add_argument('-c', '--checkpoint', default=1)
     args = parser.parse_args()
-    files = [file for file in os.listdir(f'dump') if args.name in file]
+    files = [file for file in os.listdir(f'dump') if args.name in file and file.endswith(f'{args.checkpoint}.pkl')]
     if files == []:
         return
     _, _, cm = load_result_pkl(os.path.join('dump', files[0]))
