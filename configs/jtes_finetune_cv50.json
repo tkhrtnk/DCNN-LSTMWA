@@ -1,0 +1,22 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 1e-4,
+        "batch_size": 128,
+        "epochs": 30,
+        "lr_decay": 0.695,
+        "save_dir": "logs/exp3/jtes/cv50/extractor"
+    },
+    "data": {
+        "name": "jtes",
+        "num_classes": 4,
+        "training_files": "filelists/jtes/cv50/jtes_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/jtes/cv50/jtes_audio_sid_text_val_filelist.txt",
+        "test_files": 0,
+        "max_sec": 4
+    },
+    "model": {
+        "dropout": 0.5,
+        "pretrained": 1
+    }
+}

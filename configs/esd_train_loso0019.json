@@ -1,0 +1,26 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 5e-06,
+        "batch_size": 16,
+        "epochs": 30,
+        "lr_decay": 0.59,
+        "save_dir": "logs/exp3/esd/loso0019"
+    },
+    "data": {
+        "name": "esd",
+        "num_classes": 4,
+        "max_sec": 3,
+        "sample_rate": 16000,
+        "frame_size": 64,
+        "hop_size": 32,
+        "training_files": "filelists/esd/loso0019/esd_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/esd/loso0019/esd_audio_sid_text_val_filelist.txt",
+        "test_files": 0
+    },
+    "model": {
+        "extractor_path": "logs/exp3/esd/loso0019/extractor/model_241211-155820_final.pth",
+        "dropout": 0.1,
+        "pretrained": 1
+    }
+}

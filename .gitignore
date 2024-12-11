@@ -1,0 +1,7 @@
+dump/
+dataset/
+__pychache__/
+filelists/**/*.txt
+logs/**/*.pth
+*.out
+*events.out.tfevents*

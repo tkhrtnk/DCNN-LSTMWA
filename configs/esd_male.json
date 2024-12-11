@@ -1,0 +1,26 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 5e-6,
+        "batch_size": 16,
+        "epochs": 30,
+        "lr_decay": 0.859,
+        "save_dir": "logs/exp2/esd/male"
+    },
+    "data": {
+        "name": "esd",
+        "num_classes": 4,
+        "time_sec": 3,
+        "sample_rate": 16000,
+        "frame_size": 64,
+        "hop_size": 32,
+        "training_files": "filelists/esd/male/esd_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/esd/male/esd_audio_sid_text_val_filelist.txt",
+        "test_files": "filelists/esd/male/esd_audio_sid_text_test_filelist.txt"
+    },
+    "model": {
+        "extractor_path": "/work/abelab5/t_tana/emo_clf2/logs/exp2/esd/male/extractor/model_241204-164047.pth",
+        "dropout": 0.5,
+        "pretrained": 1
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 1e-4,
+        "batch_size": 128,
+        "epochs": 30,
+        "lr_decay": 0.695, 
+        "save_dir": "logs/exp2/esd/all/extractor"
+    },
+    "data": {
+        "name": "esd",
+        "num_classes": 4,
+        "training_files": "filelists/esd/all/esd_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/esd/all/esd_audio_sid_text_val_filelist.txt",
+        "test_files": "filelists/esd/all/esd_audio_sid_text_test_filelist.txt"
+    },
+    "model": {
+        "dropout": 0.5,
+        "pretrained": 1
+    }
+}
