@@ -1,0 +1,27 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 5e-06,
+        "batch_size": 16,
+        "epochs": 30,
+        "lr_decay": 0.70,
+        "save_dir": "logs/exp4/studies/ita"
+    },
+    "data": {
+        "name": "studies",
+        "num_classes": 4,
+        "max_sec": 4,
+        "sample_rate": 16000,
+        "frame_size": 64,
+        "hop_size": 32,
+        "training_files": "filelists/studies/ita/studies_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/studies/ita/studies_audio_sid_text_val_filelist.txt",
+        "test_files": 0,
+        "spec_aug": 1
+    },
+    "model": {
+        "model_path": "/work/abelab5/t_tana/emo_clf2/logs/exp3/jtes/all/model_241216-171407_final.pth",
+        "dropout": 0.1,
+        "pretrained": 1
+    }
+}

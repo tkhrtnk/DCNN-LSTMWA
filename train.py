@@ -13,6 +13,8 @@ import torchvision.transforms as T
 from torch.utils.tensorboard import SummaryWriter
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
+import random
+from utils import EarlyStopping
 
 def main():
     parser = argparse.ArgumentParser()
@@ -26,6 +28,7 @@ def main():
 
     writer = SummaryWriter(log_dir=hparams.train.save_dir)
     generator = torch.Generator(device=device).manual_seed(hparams.train.randseed)
+    random.seed(hparams.train.randseed)
     # 訓練データ
     training_data = EmotionDataset(train='train', hparams=hparams, device=device, 
                                transform=T.Normalize(mean = (0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)))
@@ -43,15 +46,20 @@ def main():
                             transform=T.Normalize(mean = (0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)))
     test_dataloader = DataLoader(test_data, batch_size=hparams.train.batch_size, generator=generator, shuffle=True, drop_last=False)
 
+    print(f'config: {args.config_filepath}')
     print(hparams)
-
-    if hparams.data.max_sec == 3:
-        seq_len = 8
-    elif hparams.data.max_sec == 4:
-        seq_len = 11
-    
+    seq_len = next(iter(train_dataloader))[0].size(1)
     # モデルの構築
-    model = LSTMEmoClf(num_classes=hparams.data.num_classes, seq_len=seq_len, dropout=hparams.model.dropout, extractor_path=hparams.model.extractor_path)
+    # 構築済みモデルを読み込む場合
+    try:
+        print(f'{hparams.model.model_path=}')
+        model = torch.load(hparams.model.model_path)
+        if model.seq_len != seq_len:
+            model.lstm_reinit(seq_len)
+    # 学習済みのextractorを使用して新しくモデルを作成する場合
+    except AttributeError as e:
+        print(f'{hparams.model.extractor_path=}')
+        model = LSTMEmoClf(num_classes=hparams.data.num_classes, seq_len=seq_len, dropout=hparams.model.dropout, extractor_path=hparams.model.extractor_path)
     model.to(device)
 
     # 確認(summaryはRNNだと使用不可)
@@ -167,9 +175,14 @@ def test_loop(dataloader, model, loss_fn):
             correct_all += (pred.argmax(1) == y).type(torch.float).sum().item() / X.size(0)
             y_pred += pred.argmax(1).tolist()
             y_true += y.tolist()
+
         loss_all /= len(dataloader) # 損失平均
         correct_all /= len(dataloader) # 正解率
-        cm = confusion_matrix(y_pred, y_true) # 混同行列
+        cm = confusion_matrix(y_ture, y_pred) # 混同行列
+        # DEBUG
+        print(f'{y_pred=}')
+        print(f'{y_true=}')
+        print(f'{cm=}\n')
         print(f'Test({size=}): \n Accuracy: {(100*correct_all):>0.1f}%, Avg loss: {loss_all:>8f} \n')
         return loss_all, correct_all, cm 
 

@@ -1,6 +1,8 @@
 # DCNN-BLSTMWA
 Deep CNN and Bidirectional LSTM With Attention model for Speech Emotion Recognition
 
+[github repository](https://github.com/tkhrtnk/DCNN-LSTMWA.git)
+
 ## Model Architecture
 ![DCNN-LSTMWA](resources/model_architecture.png)
 Implemented with reference to the [this paper](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.643202/full "Pre-trained Deep Convolution Neural Network Model With Attention for Speech Emotion Recognition")
@@ -122,3 +124,133 @@ python hparams_changer.py
 
 You can change hyperparameters of the JSON files in `config_list`.
 Edit `config_list` in this program to change targets in dialogue mode.
+
+## Directory
+
+### filelists
+
+- esd
+
+  all
+
+  female
+  
+  male
+  
+  loso0011~0020 = for leave one speaker out
+
+- jtes
+
+  all
+
+  cv10~50 = for cross validation
+
+  embed
+
+- ravdess
+
+  all
+
+  cv4~24 = for cross validation
+
+- studies (teacher)
+
+  all
+
+  cv20~100 = for cross validation
+
+  ita = only ita 100 text * 4 emotion + ita 324 text (neutral)
+
+- studies-calls = studies(teacher)+calls(operator)
+
+- studies-calls-jtes = studies(teacher)+calls(operator)+jtes
+
+- studies-jtes = (studies(teacher)+jtes)
+  
+  cv1~5 = for cross validation
+  
+  integrate_dataset = make cv1~5 from studies and jtes filelist
+
+### configs
+  
+  Setting JSON files
+
+### dump
+
+  pickle files of servector 
+
+### logs
+
+  Learning log, result, and modelfile
+
+### resources
+
+  confusion matrix of training result
+
+## Functions and Classes
+
+### mel_processing.py
+
+  get_3dmelspec_from_file
+
+  calc_deltas
+
+  get_melspec_from_file
+
+  pre_emphasis
+
+  calc_n_sample_from_file
+
+  time_mask
+
+  freq_mask
+
+### preprocess.py
+
+  extract_resized_segments_from_file
+
+  segmentation
+
+  normalize_image
+
+  resize_segments
+
+### models.py
+
+  - class *LSTMEmoClf*
+
+  - class *SelfAttention*
+
+  - class *DCNN*
+
+  - class *DNN*
+
+### modules.py
+
+  - class *ExtractXvector*
+
+  - class *SegmentLevelFeatureExtractor*
+
+  - class *SegmentLevelFeatureExtractorFromFile*
+
+### utils.py
+
+  - pad_and_trim_sequence
+
+  - save_result_figure
+
+  - save_result_pkl
+
+  - load_result_pkl
+
+  - save_model
+
+  - get_hparams_from_file
+
+  - class *HParams*
+  
+  - class *EarlyStopping*
+
+### data_utils.py
+
+  - class *EmotionDataset*

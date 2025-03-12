@@ -16,10 +16,11 @@
         "hop_size": 32,
         "training_files": "filelists/jtes/cv10/jtes_audio_sid_text_train_filelist.txt",
         "val_files": "filelists/jtes/cv10/jtes_audio_sid_text_val_filelist.txt",
-        "test_files": 0
+        "test_files": 0,
+        "spec_aug": 1
     },
     "model": {
-        "extractor_path": "/work/abelab5/t_tana/emo_clf2/logs/exp3/jtes/cv10/extractor/model_241211-160153_16.pth",
+        "extractor_path": "logs/exp3/jtes/cv10/extractor/checkpoint.pth",
         "dropout": 0.1,
         "pretrained": 1
     }

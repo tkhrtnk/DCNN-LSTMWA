@@ -1,0 +1,23 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 1e-4,
+        "batch_size": 128,
+        "epochs": 120,
+        "lr_decay": 0.87,
+        "save_dir": "logs/exp4/studies/cv20/extractor"
+    },
+    "data": {
+        "name": "studies",
+        "num_classes": 4,
+        "training_files": "filelists/studies/cv20/studies_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/studies/cv20/studies_audio_sid_text_val_filelist.txt",
+        "test_files": 0,
+        "max_sec": 8,
+        "spec_aug": 0
+    },
+    "model": {
+        "dropout": 0.5,
+        "pretrained": 1
+    }
+}

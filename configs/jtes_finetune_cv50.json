@@ -13,7 +13,8 @@
         "training_files": "filelists/jtes/cv50/jtes_audio_sid_text_train_filelist.txt",
         "val_files": "filelists/jtes/cv50/jtes_audio_sid_text_val_filelist.txt",
         "test_files": 0,
-        "max_sec": 4
+        "max_sec": 4,
+        "spec_aug": 1
     },
     "model": {
         "dropout": 0.5,

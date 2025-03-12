@@ -13,6 +13,10 @@ from modules import ExtractXvector
 import torchvision.transforms as T
 from torch.utils.tensorboard import SummaryWriter
 from sklearn.metrics import confusion_matrix
+'''
+Xvectorで感情認識
+うまくいかないため別の方法を検討→DCNN-BLSTMwA
+'''
 
 def main():
     parser = argparse.ArgumentParser()

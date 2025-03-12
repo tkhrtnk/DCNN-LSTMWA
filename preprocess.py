@@ -60,9 +60,9 @@ def save_dict(dict, savepath):
         pkl.dump(dict, f)
     print('saved')
 
-def extract_resized_segments_from_file(filepath, device=None, normalizer=None, max_sec=3.0):
+def extract_resized_segments_from_file(filepath, device=None, normalizer=None, max_sec=3.0, spec_aug=False):
     # extract melspecs -> normalize 0-1 -> custom normalize (if needed) -> segmentation -> resize each segment
-    mel_spec_3d = get_3dmelspec_from_file(filepath=filepath, max_sec=max_sec, pre_emph=True, fft_sec=25e-3, hop_sec=10e-3, window_sec=25e-3, n_mels=64, device=device)
+    mel_spec_3d = get_3dmelspec_from_file(filepath=filepath, max_sec=max_sec, pre_emph=True, fft_sec=25e-3, hop_sec=10e-3, window_sec=25e-3, n_mels=64, device=device, spec_aug=spec_aug)
     mel_spec_3d = normalize_image(mel_spec_3d)
     # use custom normalize method
     if normalizer is not None:
@@ -81,11 +81,14 @@ def segmentation(mel_spec_3d, frame_size=64, hop_size=32):
     segments = []
     # DEBUG
     # print(mel_spec_3d.size())
-    hop = ((mel_spec_3d.size(2) - frame_size) % hop_size)
+    hop = int((mel_spec_3d.size(2) - frame_size) / hop_size + 1)
     for i in range(hop):
         segment = mel_spec_3d[:,:,start:start + frame_size]
         if segment.size(2) < frame_size:
             break
+        # # 後部サイレント部分は非サイレント部分を連続させる
+        # if torch.all(segment[2] == segment[2][0, 0]):
+        #     segment = segments[-1]
         segments.append(segment)
         start += hop_size
     return torch.stack(segments)

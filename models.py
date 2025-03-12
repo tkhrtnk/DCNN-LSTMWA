@@ -31,9 +31,12 @@ def main():
 class LSTMEmoClf(nn.Module):
     def __init__(self, num_classes, seq_len, dropout, extractor_path):
         super(LSTMEmoClf, self).__init__()
+        # extractor
         self.seq_len = seq_len
         net = DCNN(num_classes=num_classes, weight_path=extractor_path)
         self.extractor = create_feature_extractor(net, {'net.net.classifier.4': 'feature'})
+
+        # layer
         self.bilstm_stack = nn.LSTM(
             input_size = 4096,
             hidden_size = 128, # outputもこのサイズ
@@ -50,6 +53,19 @@ class LSTMEmoClf(nn.Module):
             nn.ReLU(),
             nn.Linear(in_features=256, out_features=num_classes)
         )
+
+    # def lstm_reinit(self, seq_len):
+    #     self.seq_len = seq_len
+    #     new_bilstm_stack = nn.LSTM(
+    #         input_size = 4096,
+    #         hidden_size = 128, # outputもこのサイズ
+    #         batch_first = True,
+    #         num_layers = seq_len, 
+    #         bidirectional = True            
+    #     )
+    #     nn.init.kaiming_normal_(new_bilstm_stack.weight_ih_l0)
+    #     nn.init.kaiming_normal_(new_bilstm_stack.weight_hh_l0)
+    #     self.bilstm_stack = new_bilstm_stack
     
     def forward(self, x):
         # x.size() -> (batch_size, seq_len, C, H, W)

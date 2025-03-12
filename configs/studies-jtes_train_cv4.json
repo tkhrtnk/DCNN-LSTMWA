@@ -1,0 +1,27 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 5e-06,
+        "batch_size": 16,
+        "epochs": 30,
+        "lr_decay": 0.59,
+        "save_dir": "logs/exp5/studies-jtes/cv4"
+    },
+    "data": {
+        "name": "studies-jtes",
+        "num_classes": 4,
+        "max_sec": 8,
+        "sample_rate": 16000,
+        "frame_size": 64,
+        "hop_size": 32,
+        "training_files": "filelists/studies-jtes/cv4/studies-jtes_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/studies-jtes/cv4/studies-jtes_audio_sid_text_val_filelist.txt",
+        "test_files": 0,
+        "spec_aug": 1
+    },
+    "model": {
+        "extractor_path": "logs/exp5/studies-jtes/cv4/extractor/model_250114-121326_16.pth",
+        "dropout": 0.1,
+        "pretrained": 1
+    }
+}

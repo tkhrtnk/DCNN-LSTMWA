@@ -1,0 +1,27 @@
+{
+    "train": {
+        "randseed": 1234,
+        "learning_rate": 5e-06,
+        "batch_size": 16,
+        "epochs": 30,
+        "lr_decay": 0.8,
+        "save_dir": "logs/exp4/studies/cv60"
+    },
+    "data": {
+        "name": "studies",
+        "num_classes": 4,
+        "max_sec": 8,
+        "sample_rate": 16000,
+        "frame_size": 64,
+        "hop_size": 32,
+        "training_files": "filelists/studies/cv60/studies_audio_sid_text_train_filelist.txt",
+        "val_files": "filelists/studies/cv60/studies_audio_sid_text_val_filelist.txt",
+        "test_files": 0,
+        "spec_aug": 1
+    },
+    "model": {
+        "extractor_path": "logs/exp4/studies/cv60/extractor/model_250107-201636_final.pth",
+        "dropout": 0.1,
+        "pretrained": 1
+    }
+}

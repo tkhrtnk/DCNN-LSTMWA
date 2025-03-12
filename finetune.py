@@ -15,6 +15,7 @@ import torchvision.transforms as T
 from torch.utils.tensorboard import SummaryWriter
 from hparams_changer import change_hparam
 from sklearn.metrics import confusion_matrix
+from utils import EarlyStopping
 
 def main():
     parser = argparse.ArgumentParser()
@@ -98,7 +99,6 @@ def main():
             # モデルの保存+テスト用モデルの保存パスのリストに追加
             modelpath_list.append(save_model(hparams.train.save_dir, model, start_time, epoch+1))
         sys.stdout.flush()
-    modelpath_list.append(save_model(hparams.train.save_dir, model, start_time))
     path = os.path.join(hparams.train.save_dir, f'acc_loss_{start_time}.out')
     with open(path, "wb") as f:
         pkl.dump((acc_record, loss_record), f)

@@ -16,10 +16,11 @@
         "hop_size": 32,
         "training_files": "filelists/jtes/cv40/jtes_audio_sid_text_train_filelist.txt",
         "val_files": "filelists/jtes/cv40/jtes_audio_sid_text_val_filelist.txt",
-        "test_files": 0
+        "test_files": 0,
+        "spec_aug": 1
     },
     "model": {
-        "extractor_path": "logs/exp3/jtes/cv40/extractor/model_241211-174933_final.pth",
+        "extractor_path": "logs/exp3/jtes/cv40/extractor/checkpoint.pth",
         "dropout": 0.1,
         "pretrained": 1
     }

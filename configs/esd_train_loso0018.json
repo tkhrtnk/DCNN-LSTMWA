@@ -19,7 +19,7 @@
         "test_files": 0
     },
     "model": {
-        "extractor_path": "logs/exp3/esd/loso0018/extractor/model_241211-154252_final.pth",
+        "extractor_path": "logs/exp3/esd/loso0018/extractor/checkpoint.pth",
         "dropout": 0.1,
         "pretrained": 1
     }

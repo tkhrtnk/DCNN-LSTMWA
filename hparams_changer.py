@@ -2,14 +2,15 @@ import re
 import os
 import argparse
 import sys
+'''
+    python hparams_changer.py [--path] [--hparam] [--value]
+    引数をつけるとそのpathのhparamをvalueに変更して終了
+    引数をつけないと対話実行モードになる
+    config_listのJSONファイルのハイパーパラメータを対話実行モードで一括で変更する
+'''
 
 def main():
-    ########################################################
-    # python hparams_changer.py [--path] [--hparam] [--value]
-    # 引数をつけるとそのpathのhparamをvalueに変更して終了
-    # 引数をつけないと対話実行モードになる
-    # 以下のリストのJSONファイルのハイパーパラメータを対話実行モードで一括で変更する
-
+    
     config_list = [
         # '/work/abelab5/t_tana/emo_clf2/configs/esd_finetune_loso0011.json',
         # '/work/abelab5/t_tana/emo_clf2/configs/esd_finetune_loso0012.json',
@@ -22,16 +23,16 @@ def main():
         # '/work/abelab5/t_tana/emo_clf2/configs/esd_finetune_loso0019.json',
         # '/work/abelab5/t_tana/emo_clf2/configs/esd_finetune_loso0020.json'
         # ,
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0011.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0012.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0013.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0014.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0015.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0016.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0017.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0018.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0019.json',
-        '/work/abelab5/t_tana/emo_clf2/configs/esd_loso0020.json'
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0011.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0012.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0013.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0014.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0015.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0016.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0017.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0018.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0019.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/esd_train_loso0020.json'
         # ,
         # '/work/abelab5/t_tana/emo_clf2/configs/jtes_finetune_cv10.json',
         # '/work/abelab5/t_tana/emo_clf2/configs/jtes_finetune_cv20.json',
@@ -39,11 +40,11 @@ def main():
         # '/work/abelab5/t_tana/emo_clf2/configs/jtes_finetune_cv40.json',
         # '/work/abelab5/t_tana/emo_clf2/configs/jtes_finetune_cv50.json'
         # ,
-        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_cv10.json',
-        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_cv20.json',
-        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_cv30.json',
-        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_cv40.json',
-        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_cv50.json'
+        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_train_cv10.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_train_cv20.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_train_cv30.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_train_cv40.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/jtes_train_cv50.json'
         # ,
         # '/work/abelab5/t_tana/emo_clf2/configs/esd_xvector_finetune_loso0011.json',
         # '/work/abelab5/t_tana/emo_clf2/configs/esd_xvector_finetune_loso0012.json',
@@ -78,6 +79,26 @@ def main():
         # '/work/abelab5/t_tana/emo_clf2/configs/jtes_xvector_train_cv30.json',
         # '/work/abelab5/t_tana/emo_clf2/configs/jtes_xvector_train_cv40.json',
         # '/work/abelab5/t_tana/emo_clf2/configs/jtes_xvector_train_cv50.json'
+        # ,
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_finetune_cv20.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_finetune_cv40.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_finetune_cv60.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_finetune_cv80.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_finetune_cv100.json'
+        # ,
+        # STUDIES -> STUDIES
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_train_ita_cv20.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_train_ita_cv40.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_train_ita_cv60.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_train_ita_cv80.json',
+        # '/work/abelab5/t_tana/emo_clf2/configs/studies_train_ita_cv100.json'
+        # ,
+        # # JTES -> STUDIES
+        '/work/abelab5/t_tana/emo_clf2/configs/studies_train_jtes_cv20.json',
+        '/work/abelab5/t_tana/emo_clf2/configs/studies_train_jtes_cv40.json',
+        '/work/abelab5/t_tana/emo_clf2/configs/studies_train_jtes_cv60.json',
+        '/work/abelab5/t_tana/emo_clf2/configs/studies_train_jtes_cv80.json',
+        '/work/abelab5/t_tana/emo_clf2/configs/studies_train_jtes_cv100.json'
     ]
     ########################################################
     parser = argparse.ArgumentParser()

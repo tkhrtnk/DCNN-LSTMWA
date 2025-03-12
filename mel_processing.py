@@ -9,9 +9,15 @@ import torchaudio
 import torch.nn.functional as F
 import torchaudio.transforms as T
 from torchaudio.functional import compute_deltas
+import random
 
-def get_3dmelspec_from_file(filepath, max_sec, pre_emph, fft_sec, hop_sec, window_sec, n_mels, device=None):
+def get_3dmelspec_from_file(filepath, max_sec, pre_emph, fft_sec, hop_sec, window_sec, n_mels, device=None, spec_aug=False):
     log_mel_spec = get_melspec_from_file(filepath, max_sec, pre_emph, fft_sec, hop_sec, window_sec, n_mels, device)
+    # if spec_aug:
+    #     log_mel_spec = time_mask(log_mel_spec)
+    #     log_mel_spec = time_mask(log_mel_spec)
+    #     log_mel_spec = freq_mask(log_mel_spec)
+    #     log_mel_spec = freq_mask(log_mel_spec)
     return calc_deltas(log_mel_spec)
 
 def calc_deltas(mel_spec):
@@ -20,7 +26,7 @@ def calc_deltas(mel_spec):
     mel_specs_3d = torch.cat((mel_spec, delta1, delta2), dim=0)
     return mel_specs_3d
 
-def get_melspec_from_file(filepath, max_sec, pre_emph, fft_sec, hop_sec, window_sec, n_mels, device=None):
+def get_melspec_from_file(filepath, max_sec, pre_emph, fft_sec, hop_sec, window_sec, n_mels, device=None, speed=1.0):
     # 音声の読み込み
     waveform, sr = torchaudio.load(filepath)
     if device is not None:
@@ -112,3 +118,24 @@ def get_melspec_from_file(filepath, max_sec, pre_emph, fft_sec, hop_sec, window_
 def pre_emphasis(y, alpha=0.97):
     y_preemphasized = torch.cat((y[:, 0:1], y[:, 1:] - alpha * y[:, :-1]), dim=1)
     return y_preemphasized
+
+def calc_n_sample_from_file(filename):
+    waveform, sr = torchaudio.load(filepath=filename)
+    n_sample = waveform.size(1)
+    return n_sample
+
+def time_mask(spec, T=40):
+    # spec3d.size() -> (batch_size, h, w)
+    num_frames = spec.shape[2]
+    t = random.randint(0, T)
+    t0 = random.randint(0, num_frames - t)
+    spec[:,:,t0:t0+t] = spec.min()
+    return spec
+
+def freq_mask(spec, F=15):
+    # spec3d.size() -> (batch_size, h, w)
+    num_freqs = spec.shape[1]
+    f = random.randint(0, F)
+    f0 = random.randint(0, num_freqs - F)
+    spec[:, f0:f0+f, :] = spec.min()
+    return spec    
