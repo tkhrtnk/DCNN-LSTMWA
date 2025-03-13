@@ -8,8 +8,9 @@ from utils import save_result_figure
 from sklearn.metrics import confusion_matrix
 import pickle
 from tqdm import tqdm
+import re
 
-OUT_DIR = 'dump/servector/esd'
+OUT_DIR = 'dump/servector'
 # JTES: /work/abelab5/t_tana/emo_clf2/logs/exp3/jtes/cv10/model_241211-190716_final.pth
 # ESD: /work/abelab5/t_tana/emo_clf2/logs/exp3/esd/loso0019/model_241211-201617_final.pth
 def main():
@@ -63,7 +64,7 @@ def filelist_mode(modelpath, device, max_sec, id2emo, filelist, fig_title):
             pred_labels.append(label)
             pred = pred.squeeze(0)
         vector_dict[wavpath] = pred
-    save_servector_dict(os.path.join(OUT_DIR, f'{os.path.basename(filelist)}.pkl'), vector_dict)
+    save_servector_dict(os.path.join(OUT_DIR, re.search(r'filelists/(.*)/', filelist), f'{os.path.basename(filelist)}.pkl'), vector_dict)
     assert len(true_labels) == len(pred_labels)
     acc = sum([int(pred_label == true_label) for pred_label, true_label in zip(pred_labels, true_labels)]) / len(pred_labels)
     cm = confusion_matrix(true_labels, pred_labels)
