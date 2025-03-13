@@ -1,0 +1,16 @@
+/work/abelab5/t_tana/emo_clf2/dataset/esd_neutral/0019_000025.wav|||0
+/work/abelab5/t_tana/emo_clf2/dataset/esd_neutral/0019_000035.wav|||0
+/work/abelab5/t_tana/emo_clf2/dataset/esd_neutral/0019_000036.wav|||0
+/work/abelab5/t_tana/emo_clf2/dataset/esd_neutral/0019_000040.wav|||0
+/work/abelab5/t_tana/emo_clf2/dataset/esd_happy/0019_000725.wav|||1
+/work/abelab5/t_tana/emo_clf2/dataset/esd_happy/0019_000735.wav|||1
+/work/abelab5/t_tana/emo_clf2/dataset/esd_happy/0019_000736.wav|||1
+/work/abelab5/t_tana/emo_clf2/dataset/esd_happy/0019_000740.wav|||1
+/work/abelab5/t_tana/emo_clf2/dataset/esd_sad/0019_001075.wav|||2
+/work/abelab5/t_tana/emo_clf2/dataset/esd_sad/0019_001085.wav|||2
+/work/abelab5/t_tana/emo_clf2/dataset/esd_sad/0019_001086.wav|||2
+/work/abelab5/t_tana/emo_clf2/dataset/esd_sad/0019_001090.wav|||2
+/work/abelab5/t_tana/emo_clf2/dataset/esd_angry/0019_000375.wav|||3
+/work/abelab5/t_tana/emo_clf2/dataset/esd_angry/0019_000385.wav|||3
+/work/abelab5/t_tana/emo_clf2/dataset/esd_angry/0019_000386.wav|||3
+/work/abelab5/t_tana/emo_clf2/dataset/esd_angry/0019_000390.wav|||3

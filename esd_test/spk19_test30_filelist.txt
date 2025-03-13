@@ -1,0 +1,120 @@
+dataset/esd/0019/Neutral/0019_000001.wav|19|The nine the eggs, I keep.|0|1
+dataset/esd/0019/Neutral/0019_000002.wav|19|I did go, and made many prisoners.|0|1
+dataset/esd/0019/Neutral/0019_000003.wav|19|That I owe my thanks to you.|0|1
+dataset/esd/0019/Neutral/0019_000004.wav|19|They went up to the dark mass job had pointed out.|0|1
+dataset/esd/0019/Neutral/0019_000005.wav|19|Clear than clear water!|0|1
+dataset/esd/0019/Neutral/0019_000006.wav|19|Andy what's the gyre and to gimble.|0|1
+dataset/esd/0019/Neutral/0019_000007.wav|19|I'm as bad as I can be.|0|1
+dataset/esd/0019/Neutral/0019_000008.wav|19|That was his chief thought.|0|1
+dataset/esd/0019/Neutral/0019_000009.wav|19|On the twenty second of last march.|0|1
+dataset/esd/0019/Neutral/0019_000010.wav|19|A nauseous draught.|0|1
+dataset/esd/0019/Neutral/0019_000011.wav|19|Chapter ten a warm welcome.|0|1
+dataset/esd/0019/Neutral/0019_000012.wav|19|Her shoes were like fishes.|0|1
+dataset/esd/0019/Neutral/0019_000013.wav|19|I have bunburyed all over goat on two separate occasions.|0|1
+dataset/esd/0019/Neutral/0019_000014.wav|19|Annie please please don't hurt me!|0|1
+dataset/esd/0019/Neutral/0019_000015.wav|19|Poor Tom now is dead!|0|1
+dataset/esd/0019/Neutral/0019_000016.wav|19|Mister share man, I move for a division.|0|1
+dataset/esd/0019/Neutral/0019_000017.wav|19|Why has this egg not broken?|0|1
+dataset/esd/0019/Neutral/0019_000018.wav|19|Then sadly it is much farther.|0|1
+dataset/esd/0019/Neutral/0019_000019.wav|19|At the end of four.|0|1
+dataset/esd/0019/Neutral/0019_000020.wav|19|At the roots-of a bush of a grass.|0|1
+dataset/esd/0019/Neutral/0019_000021.wav|19|As rich-as Peter's son in law!|0|1
+dataset/esd/0019/Neutral/0019_000022.wav|19|And what are doves. And what are doves.|0|1
+dataset/esd/0019/Neutral/0019_000023.wav|19|I thought you meant how old are you?|0|1
+dataset/esd/0019/Neutral/0019_000024.wav|19|The football teams give a tea party.|0|1
+dataset/esd/0019/Neutral/0019_000025.wav|19|She is now choosing skirt to wear.|0|1
+dataset/esd/0019/Neutral/0019_000026.wav|19|Let's make the noise a snake.|0|1
+dataset/esd/0019/Neutral/0019_000027.wav|19|Monster made a deep bow.|0|1
+dataset/esd/0019/Neutral/0019_000028.wav|19|She had said, so that one could keep up a conversation!|0|1
+dataset/esd/0019/Neutral/0019_000029.wav|19|Rat came and replied on the leaves.|0|1
+dataset/esd/0019/Neutral/0019_000030.wav|19|Must a name mean something?|0|1
+ataset/esd/0019/Angry/0019_000351.wav|19|The nine the eggs, I keep.|3|1
+dataset/esd/0019/Angry/0019_000352.wav|19|I did go, and made many prisoners.|3|1
+dataset/esd/0019/Angry/0019_000353.wav|19|That I owe my thanks to you.|3|1
+dataset/esd/0019/Angry/0019_000354.wav|19|They went up to the dark mass job had pointed out.|3|1
+dataset/esd/0019/Angry/0019_000355.wav|19|Clear than clear water!|3|1
+dataset/esd/0019/Angry/0019_000356.wav|19|Andy what's the gyre and to gimble.|3|1
+dataset/esd/0019/Angry/0019_000357.wav|19|I'm as bad as I can be.|3|1
+dataset/esd/0019/Angry/0019_000358.wav|19|That was his chief thought.|3|1
+dataset/esd/0019/Angry/0019_000359.wav|19|On the twenty second of last march.|3|1
+dataset/esd/0019/Angry/0019_000360.wav|19|A nauseous draught.|3|1
+dataset/esd/0019/Angry/0019_000361.wav|19|Chapter ten a warm welcome.|3|1
+dataset/esd/0019/Angry/0019_000362.wav|19|Her shoes were like fishes.|3|1
+dataset/esd/0019/Angry/0019_000363.wav|19|I have bunburyed all over goat on two separate occasions.|3|1
+dataset/esd/0019/Angry/0019_000364.wav|19|Annie please please don't hurt me!|3|1
+dataset/esd/0019/Angry/0019_000365.wav|19|Poor Tom now is dead!|3|1
+dataset/esd/0019/Angry/0019_000366.wav|19|Mister share man, I move for a division.|3|1
+dataset/esd/0019/Angry/0019_000367.wav|19|Why has this egg not broken?|3|1
+dataset/esd/0019/Angry/0019_000368.wav|19|Then sadly it is much farther.|3|1
+dataset/esd/0019/Angry/0019_000369.wav|19|At the end of four.|3|1
+dataset/esd/0019/Angry/0019_000370.wav|19|At the roots-of a bush of a grass.|3|1
+dataset/esd/0019/Angry/0019_000371.wav|19|As rich-as Peter's son in law!|3|1
+dataset/esd/0019/Angry/0019_000372.wav|19|And what are doves. And what are doves.|3|1
+dataset/esd/0019/Angry/0019_000373.wav|19|I thought you meant how old are you?|3|1
+dataset/esd/0019/Angry/0019_000374.wav|19|The football teams give a tea party.|3|1
+dataset/esd/0019/Angry/0019_000375.wav|19|She is now choosing skirt to wear.|3|1
+dataset/esd/0019/Angry/0019_000376.wav|19|Let's make the noise a snake.|3|1
+dataset/esd/0019/Angry/0019_000377.wav|19|Monster made a deep bow.|3|1
+dataset/esd/0019/Angry/0019_000378.wav|19|She had said, so that one could keep up a conversation!|3|1
+dataset/esd/0019/Angry/0019_000379.wav|19|Rat came and replied on the leaves.|3|1
+dataset/esd/0019/Angry/0019_000380.wav|19|Must a name mean something?|3|1
+dataset/esd/0019/Happy/0019_000701.wav|19|The nine the eggs, I keep.|1|1
+dataset/esd/0019/Happy/0019_000702.wav|19|I did go, and made many prisoners.|1|1
+dataset/esd/0019/Happy/0019_000703.wav|19|That I owe my thanks to you.|1|1
+dataset/esd/0019/Happy/0019_000704.wav|19|They went up to the dark mass job had pointed out.|1|1
+dataset/esd/0019/Happy/0019_000705.wav|19|Clear than clear water!|1|1
+dataset/esd/0019/Happy/0019_000706.wav|19|Andy what's the gyre and to gimble.|1|1
+dataset/esd/0019/Happy/0019_000707.wav|19|I'm as bad as I can be.|1|1
+dataset/esd/0019/Happy/0019_000708.wav|19|That was his chief thought.|1|1
+dataset/esd/0019/Happy/0019_000709.wav|19|On the twenty second of last march.|1|1
+dataset/esd/0019/Happy/0019_000710.wav|19|A nauseous draught.|1|1
+dataset/esd/0019/Happy/0019_000711.wav|19|Chapter ten a warm welcome.|1|1
+dataset/esd/0019/Happy/0019_000712.wav|19|Her shoes were like fishes.|1|1
+dataset/esd/0019/Happy/0019_000713.wav|19|I have bunburyed all over goat on two separate occasions.|1|1
+dataset/esd/0019/Happy/0019_000714.wav|19|Annie please please don't hurt me!|1|1
+dataset/esd/0019/Happy/0019_000715.wav|19|Poor Tom now is dead!|1|1
+dataset/esd/0019/Happy/0019_000716.wav|19|Mister share man, I move for a division.|1|1
+dataset/esd/0019/Happy/0019_000717.wav|19|Why has this egg not broken?|1|1
+dataset/esd/0019/Happy/0019_000718.wav|19|Then sadly it is much farther.|1|1
+dataset/esd/0019/Happy/0019_000719.wav|19|At the end of four.|1|1
+dataset/esd/0019/Happy/0019_000720.wav|19|At the roots-of a bush of a grass.|1|1
+dataset/esd/0019/Happy/0019_000721.wav|19|As rich-as Peter's son in law!|1|1
+dataset/esd/0019/Happy/0019_000722.wav|19|And what are doves. And what are doves.|1|1
+dataset/esd/0019/Happy/0019_000723.wav|19|I thought you meant how old are you?|1|1
+dataset/esd/0019/Happy/0019_000724.wav|19|The football teams give a tea party.|1|1
+dataset/esd/0019/Happy/0019_000725.wav|19|She is now choosing skirt to wear.|1|1
+dataset/esd/0019/Happy/0019_000726.wav|19|Let's make the noise a snake.|1|1
+dataset/esd/0019/Happy/0019_000727.wav|19|Monster made a deep bow.|1|1
+dataset/esd/0019/Happy/0019_000728.wav|19|She had said, so that one could keep up a conversation!|1|1
+dataset/esd/0019/Happy/0019_000729.wav|19|Rat came and replied on the leaves.|1|1
+dataset/esd/0019/Happy/0019_000730.wav|19|Must a name mean something?|1|1
+dataset/esd/0019/Sad/0019_001051.wav|19|The nine the eggs, I keep.|2|1
+dataset/esd/0019/Sad/0019_001052.wav|19|I did go, and made many prisoners.|2|1
+dataset/esd/0019/Sad/0019_001053.wav|19|That I owe my thanks to you.|2|1
+dataset/esd/0019/Sad/0019_001054.wav|19|They went up to the dark mass job had pointed out.|2|1
+dataset/esd/0019/Sad/0019_001055.wav|19|Clear than clear water!|2|1
+dataset/esd/0019/Sad/0019_001056.wav|19|Andy what's the gyre and to gimble.|2|1
+dataset/esd/0019/Sad/0019_001057.wav|19|I'm as bad as I can be.|2|1
+dataset/esd/0019/Sad/0019_001058.wav|19|That was his chief thought.|2|1
+dataset/esd/0019/Sad/0019_001059.wav|19|On the twenty second of last march.|2|1
+dataset/esd/0019/Sad/0019_001060.wav|19|A nauseous draught.|2|1
+dataset/esd/0019/Sad/0019_001061.wav|19|Chapter ten a warm welcome.|2|1
+dataset/esd/0019/Sad/0019_001062.wav|19|Her shoes were like fishes.|2|1
+dataset/esd/0019/Sad/0019_001063.wav|19|I have bunburyed all over goat on two separate occasions.|2|1
+dataset/esd/0019/Sad/0019_001064.wav|19|Annie please please don't hurt me!|2|1
+dataset/esd/0019/Sad/0019_001065.wav|19|Poor Tom now is dead!|2|1
+dataset/esd/0019/Sad/0019_001066.wav|19|Mister share man, I move for a division.|2|1
+dataset/esd/0019/Sad/0019_001067.wav|19|Why has this egg not broken?|2|1
+dataset/esd/0019/Sad/0019_001068.wav|19|Then sadly it is much farther.|2|1
+dataset/esd/0019/Sad/0019_001069.wav|19|At the end of four.|2|1
+dataset/esd/0019/Sad/0019_001070.wav|19|At the roots-of a bush of a grass.|2|1
+dataset/esd/0019/Sad/0019_001071.wav|19|As rich-as Peter's son in law!|2|1
+dataset/esd/0019/Sad/0019_001072.wav|19|And what are doves. And what are doves.|2|1
+dataset/esd/0019/Sad/0019_001073.wav|19|I thought you meant how old are you?|2|1
+dataset/esd/0019/Sad/0019_001074.wav|19|The football teams give a tea party.|2|1
+dataset/esd/0019/Sad/0019_001075.wav|19|She is now choosing skirt to wear.|2|1
+dataset/esd/0019/Sad/0019_001076.wav|19|Let's make the noise a snake.|2|1
+dataset/esd/0019/Sad/0019_001077.wav|19|Monster made a deep bow.|2|1
+dataset/esd/0019/Sad/0019_001078.wav|19|She had said, so that one could keep up a conversation!|2|1
+dataset/esd/0019/Sad/0019_001079.wav|19|Rat came and replied on the leaves.|2|1
+dataset/esd/0019/Sad/0019_001080.wav|19|Must a name mean something?|2|1
